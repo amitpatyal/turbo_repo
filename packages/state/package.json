@@ -1,0 +1,25 @@
+{
+  "name": "@repo/state",
+  "version": "1.0.0",
+  "description": "A Zustand state management package, part of a monorepo setup. Provides global state management using Zustand.",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch --preserveWatchOutput",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@repo/services": "workspace:*",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.87.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

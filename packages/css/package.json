@@ -1,0 +1,18 @@
+{
+  "name": "@repo/css",
+  "version": "1.0.0",
+  "description": "A Tailwind CSS setup package, part of a monorepo configuration. Provides utility-first CSS framework using Tailwind CSS.",
+  "exports": {
+    "./postcss": "./postcss.config.js",
+    "./tailwind": "./tailwind.config.js",
+    "./styles": "./styles.css"
+  },
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.5.6",
+    "autoprefixer": "^10.4.21"
+  }
+}
