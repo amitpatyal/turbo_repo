@@ -2,6 +2,9 @@
 
 This Turborepo starter is maintained by the Turborepo core team.
 
+- [Web](https://turbo-repo-web-eta.vercel.app) app
+- [Admin](https://turbo-repo-admin-vwtg-nz28bcugk-amitpatyals-projects.vercel.app) app
+
 ## Using this example
 
 Run the following command:
