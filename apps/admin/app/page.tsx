@@ -1,5 +1,7 @@
+"use client";
 import Image, { type ImageProps } from "next/image";
-import { Button } from "@repo/ui/button";
+import { Button } from "@repo/ui";
+import { useAuthStore, useProfileStore } from "@repo/state";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -9,16 +11,18 @@ type Props = Omit<ImageProps, "src"> & {
 
 const ThemeImage = (props: Props) => {
   const { srcLight, srcDark, ...rest } = props;
-
   return (
     <>
-      <Image {...rest} src={srcLight} className="imgLight" />
-      <Image {...rest} src={srcDark} className="imgDark" />
+      <Image alt="" {...rest} src={srcLight} className="imgLight" />
+      <Image alt="" {...rest} src={srcDark} className="imgDark" />
     </>
   );
 };
 
 export default function Home() {
+  const user = useAuthStore((state) => state.user); // to avoid tree shaking
+  const profile = useProfileStore((state) => state.email); // to avoid tree shaking
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -63,7 +67,12 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Button appName="docs" className={styles.secondary}>
+        <Button
+          className={styles.secondary}
+          onClick={() =>
+            alert(`User name for store:-  ${user?.name} & ${profile?.address}`)
+          }
+        >
           Open alert
         </Button>
       </main>

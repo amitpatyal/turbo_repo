@@ -75,9 +75,21 @@ importers:
 
   apps/admin:
     dependencies:
+      '@repo/css':
+        specifier: workspace:*
+        version: link:../../packages/css
+      '@repo/shadcn':
+        specifier: workspace:*
+        version: link:../../packages/shadcn
+      '@repo/state':
+        specifier: workspace:*
+        version: link:../../packages/state
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@tanstack/react-query':
+        specifier: ^5.87.4
+        version: 5.87.4(react@18.2.0)
       next:
         specifier: ^15.5.0
         version: 15.5.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
